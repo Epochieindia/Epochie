@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const cron = require('node-cron');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Serve all static files from the root folder
 app.use(express.static(path.join(__dirname)));
