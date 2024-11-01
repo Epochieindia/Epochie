@@ -265,18 +265,7 @@
     overflow: hidden;
 }
 
-/* Default style for logos (transparent on non-white backgrounds) */
-.logo-image {
-  filter: none;
-  transition: filter 0.3s ease; /* Smooth transition for color change */
-}
-
-/* When the background is white, make the logos black */
-.white-bg .logo-image {
-  filter: brightness(0) saturate(100%);
-}
-
-/* When the background is black, make the logos white */
-.dark-bg .logo-image {
-  filter: brightness(100) saturate(0%);
+/* for hover effects */
+.hover-gradient:hover {
+  scale: 0.9;
 }
