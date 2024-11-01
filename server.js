@@ -16,8 +16,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// Cron job to ping the server every 2 minutes to keep it active
-cron.schedule('*/2 * * * *', () => {
+// Cron job to ping the server every 1 minutes to keep it active
+cron.schedule('*/1 * * * *', () => {
   console.log('Pinging the server to keep it active...');
   fetch(`${WEBAPP_URL}checkHealth`,{method: 'GET'})
       .then(res => res.text())
