@@ -330,6 +330,50 @@
       id="about"
       class="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[120px]"
     >
+      <!-- Banner with SVG logos -->
+      <div class="text-center mb-8">
+        <h3 class="text-xl font-bold mb-4">Banners</h3>
+        <div class="relative font-inter antialiased">
+          <main id="main-content" class="relative flex flex-col justify-center bg-transparent overflow-hidden white-bg">
+            <div class="w-full max-w-5xl mx-auto px-4 md:px-6">
+              <div class="text-center">
+                <!-- Logo Carousel animation -->
+                <div
+                  class="logo-scroll-container w-full inline-flex overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+                >
+                  <!-- Duplicate logo list for continuous scroll -->
+                  <ul class="animate-infinite-scroll flex items-center justify-center md:justify-start">
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/facebook.svg" alt="Facebook" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/disney.svg" alt="Disney" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/airbnb.svg" alt="Airbnb" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/apple.svg" alt="Apple" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/spark.svg" alt="Spark" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/samsung.svg" alt="Samsung" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/quora.svg" alt="Quora" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/sass.svg" alt="Sass" style="width: 100px; height: auto;" /></li>
+                  </ul>
+                  <!-- Duplicate the list for smooth scrolling -->
+                  <ul class="animate-infinite-scroll flex items-center justify-center md:justify-start" aria-hidden="true">
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/facebook.svg" alt="Facebook" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/disney.svg" alt="Disney" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/airbnb.svg" alt="Airbnb" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/apple.svg" alt="Apple" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/spark.svg" alt="Spark" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/samsung.svg" alt="Samsung" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/quora.svg" alt="Quora" style="width: 100px; height: auto;" /></li>
+                    <li style="margin: 0 10px;"><img class="logo-image" src="https://cruip-tutorials.vercel.app/logo-carousel/sass.svg" alt="Sass" style="width: 100px; height: auto;" /></li>
+                  </ul>
+                </div>
+                <!-- End: Logo Carousel animation -->
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <style>
+        .logo-image { filter: none; }
+        .white-bg .logo-image { filter: brightness(0) saturate(100%); }
+      </style>
       <div class="container">
         <div class="wow fadeInUp" data-wow-delay=".2s">
           <div class="-mx-4 flex flex-wrap items-center">
@@ -525,6 +569,7 @@
     
     </section>
     <!-- ====== About Section End -->
+    
 
     <!-- ====== CTA Section Start -->
     <section

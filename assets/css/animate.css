@@ -232,3 +232,51 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Container for logos */
+.logo-scroll-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  gap: 20px; /* Add space between logos */
+  margin-left: 1%;
+  margin-bottom: 2%;
+}
+
+/* Define the animation for infinite scrolling */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Style to apply the infinite scrolling */
+.animate-infinite-scroll {
+    display: inline-flex;
+    animation: scroll 30s linear infinite;
+    /* white-space: nowrap; Ensure the logos stay in a single line */
+}
+
+/* Ensure proper styling for the scroll container */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Default style for logos (transparent on non-white backgrounds) */
+.logo-image {
+  filter: none;
+  transition: filter 0.3s ease; /* Smooth transition for color change */
+}
+
+/* When the background is white, make the logos black */
+.white-bg .logo-image {
+  filter: brightness(0) saturate(100%);
+}
+
+/* When the background is black, make the logos white */
+.dark-bg .logo-image {
+  filter: brightness(100) saturate(0%);
+}
