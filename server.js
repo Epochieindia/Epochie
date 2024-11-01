@@ -1,8 +1,12 @@
 const express = require('express');
 const path = require('path');
 const cron = require('node-cron');
+const axios = require('axios'); // Import axios
 const app = express();
 const PORT = 3000;
+
+// Replace with your domain name
+const WEBAPP_URL = 'https://www.epochie.com/';
 
 // Serve all static files from the root folder
 app.use(express.static(path.join(__dirname)));
@@ -16,15 +20,19 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// Cron job to ping the server every 1 minutes to keep it active
-cron.schedule('*/1 * * * *', () => {
+// Cron job to ping the server every 3 minute to keep it active
+cron.schedule('*/3 * * * *', () => {
   console.log('Pinging the server to keep it active...');
-  fetch(`${WEBAPP_URL}checkHealth`,{method: 'GET'})
-      .then(res => res.text())
-      .then(body => console.log(`Server response: ${body}`))
-      .catch(err => console.error('Error pinging the server:', err));
+  axios.get(`${WEBAPP_URL}checkHealth`)
+    .then(response => {
+      console.log(`Server response: ${response.data}`);
+    })
+    .catch(err => {
+      console.error('Error pinging the server:', err);
+    });
 });
 
-app.get('/checkHealth',(req,res)=>{
+// Health check endpoint
+app.get('/checkHealth', (req, res) => {
   res.status(200).json("All ok!!!");
-})
+});
