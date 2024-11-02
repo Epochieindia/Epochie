@@ -269,3 +269,7 @@
 .hover-gradient:hover {
   scale: 0.9;
 }
+
+.hover-gradient-pro:hover {
+  scale: 1.1;
+}
