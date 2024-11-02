@@ -87,17 +87,17 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// Cron job to ping the server every 3 minute to keep it active
-// cron.schedule('*/3 * * * *', () => {
-//   console.log('Pinging the server to keep it active...');
-//   axios.get(`${WEBAPP_URL}checkHealth`)
-//     .then(response => {
-//       console.log(`Server response: ${response.data}`);
-//     })
-//     .catch(err => {
-//       console.error('Error pinging the server:', err);
-//     });
-// });
+Cron job to ping the server every 3 minute to keep it active
+cron.schedule('*/3 * * * *', () => {
+  console.log('Pinging the server to keep it active...');
+  axios.get(`${WEBAPP_URL}checkHealth`)
+    .then(response => {
+      console.log(`Server response: ${response.data}`);
+    })
+    .catch(err => {
+      console.error('Error pinging the server:', err);
+    });
+});
 
 // Health check endpoint
 app.get('/checkHealth', (req, res) => {
