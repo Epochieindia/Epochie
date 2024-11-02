@@ -1819,7 +1819,7 @@ body {
 
 .text-body-color{
   --tw-text-opacity: 1;
-  color: rgb(99 115 129 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-body-secondary{
