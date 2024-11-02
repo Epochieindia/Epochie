@@ -31,7 +31,7 @@
       <div class="container">
         <div class="relative -mx-4 flex items-center justify-between">
           <div class="w-60 max-w-full px-4">
-            <a href="index.html" class="navbar-logo block w-full py-5">
+            <a href="/" class="navbar-logo block w-full py-5">
               <img
                 src="assets/images/logo/EpochieLogo.png"
                 alt="logo"
@@ -149,7 +149,7 @@
                   </li> -->
                   <li class="submenu-item group relative">
                     <a
-                      href="hackathon.html"
+                      href="/Hackathon"
                       class="relative mx-8 flex items-center justify-between py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-8 lg:mr-0 lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
                     >
                       Hackathon
@@ -2304,7 +2304,7 @@
               >
                 Send us a Message
               </h3>
-              <form>
+              <form method="POST" action="/submit-form" >
                 <div class="mb-[22px]">
                   <label
                     for="fullName"
@@ -2498,7 +2498,7 @@
               <ul>
                 <li>
                   <a
-                    href="#home"
+                    href="/?=home"
                     class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     Home
@@ -2506,7 +2506,7 @@
                 </li>
                 <li>
                   <a
-                    href="#about"
+                    href="/?=about"
                     class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
                   >
                     About
@@ -2578,19 +2578,19 @@
                   class="-mx-3 flex items-center justify-center md:justify-start"
                 >
                   <a
-                    href="privacy.html"
+                    href="/Privacy"
                     class="px-3 text-base text-gray-7 hover:text-white hover:underline"
                   >
                     Privacy policy
                   </a>
-                  <a
+                  <!-- <a
                     href="javascript:void(0)"
                     class="px-3 text-base text-gray-7 hover:text-white hover:underline"
                   >
                     Legal notice
-                  </a>
+                  </a> -->
                   <a
-                    href="terms.html"
+                    href="/TermsAndConditions"
                     class="px-3 text-base text-gray-7 hover:text-white hover:underline"
                   >
                     Terms & Conditions
@@ -2635,7 +2635,27 @@
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+
+
+
+      window.addEventListener("DOMContentLoaded", function () {
+      // Parse URL for the "scrollTo" query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const scrollToSection = urlParams.get("");
+
+      // If a section is specified in the query, scroll to that section
+      if (scrollToSection) {
+        const targetElement = document.getElementById(scrollToSection);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+          // Remove the query parameter from the URL without reloading the page
+          history.replaceState(null, "", window.location.pathname);
+        }
+      }
+      });
+
       // ==== for menu scroll
+
       const pageLink = document.querySelectorAll(".ud-menu-scroll");
 
       pageLink.forEach((elem) => {
