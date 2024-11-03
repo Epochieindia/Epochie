@@ -55,6 +55,13 @@ app.get('/Privacy',(req,res)=>{
   res.sendFile(path.join(__dirname,'privacy.html'))
 })
 
+app.get('/NotFound404',(req,res)=>{
+  res.sendFile(path.join(__dirname,'404.html'))
+})
+
+app.get('/*', function(req,res){
+  res.redirect('/NotFound404');
+});
 
 // Handle form submission
 app.post('/submit-form', (req, res) => {
@@ -65,15 +72,13 @@ app.post('/submit-form', (req, res) => {
     email,
     phone,
     message,
+    time : Date.now()
   });
 
   newContact.save()
     .then(() => {
       // Option 1: Redirect to the homepage
       res.redirect('/'); // Redirecting to the homepage after submission
-
-      // Option 2: Send a success message (uncomment if you prefer this option)
-      // res.status(200).send('Form submitted successfully!');
     })
     .catch(err => {
       // Handle error and send response
@@ -87,8 +92,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// Cron job to ping the server every 3 minute to keep it active
-cron.schedule('*/3 * * * *', () => {
+// Cron job to ping the server every 4 minute to keep it active
+cron.schedule('*/4 * * * *', () => {
   console.log('Pinging the server to keep it active...');
   axios.get(`${WEBAPP_URL}checkHealth`)
     .then(response => {
