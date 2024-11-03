@@ -11,7 +11,7 @@ const PORT = 3000;
 const WEBAPP_URL = 'https://www.epochie.com/';
 
 // MongoDB connection (update with your credentials)
-mongoose.connect('mongodb+srv://muke2110:MUKESH%402110@cluster0.hucscvi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://epochieajmv8726:A8*M4*J9*V7*@epochie.cefvi.mongodb.net/?retryWrites=true&w=majority&appName=Epochie')
   .then(() => console.log('MongoDB connected!'))
   .catch(err => console.error('MongoDB connection error:', err));
 
